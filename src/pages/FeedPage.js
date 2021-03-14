@@ -5,7 +5,7 @@ import { BASE_URL } from "../constants/parameters";
 import { goToPostsDetailPage } from "../routes/Coordinators";
 import useProtectedPage from "../hooks/useProtectedPage";
 import SimpleCard from "../components/SimpleCard";
-import { StyleSimpleCard, LoadingGIF } from "../components/styled";
+import { LoadingGIF } from "../components/styled";
 import Loading from "../img/loading.gif";
 import { TextField } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
@@ -19,14 +19,44 @@ const SearchResponsive = styled.div`
   width: 100%;
 
   @media (min-width: 500px) and (max-width: 800px) {
-    width: 50%;
+    width: 100%;
   }
   @media (max-width: 499px) {
     width: 100%;
   }
 `;
 
+const StyleSimpleCard = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  height: auto;
+  grid-gap: 1rem;
+  margin: 2rem 1rem;
+
+  @media (min-width: 500px) and (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 95vw;
+  }
+
+  @media (max-width: 499px) {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 91vw;
+  }
+`;
+
 const InputResponsive = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  gap: 2rem;
+  margin: 1rem;
+
+  input {
+    width: 100vw;
+  }
+
   @media (min-width: 500px) and (max-width: 800px) {
     display: grid;
     width: 100%;
@@ -34,9 +64,13 @@ const InputResponsive = styled.div`
   }
 
   @media (max-width: 499px) {
-    display: grid;
-    width: 100%;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    input {
+      width: 50%;
+    }
   }
 `;
 
@@ -155,36 +189,37 @@ const FeedPage = (props) => {
           placeholder="Buscar por título..."
         />
       </SearchResponsive>
-      <StyleSimpleCard>
-        <InputResponsive>
-          <TextField
-            onChange={onChangeInputTitle}
-            value={inputTitle}
-            variant="outlined"
-            margin="normal"
-            required
-            name="title"
-            label="Título"
-            id="title"
-            autoFocus
-          />
-          <TextField
-            onChange={onChangeInputDescription}
-            value={inputDescription}
-            variant="outlined"
-            margin="normal"
-            required
-            name="description"
-            label="Descrição do post"
-            id="description"
-            autoFocus
-          />
-          <Button onClick={createPost}>
-            <AddCircleIcon style={{ fontSize: 50, color: "#0079d3" }} />
-          </Button>
-        </InputResponsive>
 
-        {isLoading && (
+      <InputResponsive>
+        <TextField
+          onChange={onChangeInputTitle}
+          value={inputTitle}
+          variant="outlined"
+          margin="normal"
+          required
+          name="title"
+          label="Título"
+          id="title"
+          autoFocus
+        />
+        <TextField
+          onChange={onChangeInputDescription}
+          value={inputDescription}
+          variant="outlined"
+          margin="normal"
+          required
+          name="description"
+          label="Descrição do post"
+          id="description"
+          autoFocus
+        />
+        <Button onClick={createPost}>
+          <AddCircleIcon style={{ fontSize: 50, color: "#0079d3" }} />
+        </Button>
+      </InputResponsive>
+
+      {isLoading && (
+        <>
           <LoadingGIF
             src={Loading}
             alt="GIF loading"
@@ -196,22 +231,23 @@ const FeedPage = (props) => {
               justifyItems: "center",
             }}
           />
-        )}
+        </>
+      )}
+
+      <StyleSimpleCard>
         {filterFeed().map((post) => {
           return (
-            <div>
-              <SimpleCard
-                key={post.id}
-                post={post}
-                username={post.username}
-                title={post.title}
-                text={post.text}
-                onClickCard={() => onClickCard(post.id)}
-                commentsCount={post.commentsCount}
-                votesCount={post.votesCount}
-                handleVotePost={handleVotePost}
-              ></SimpleCard>
-            </div>
+            <SimpleCard
+              key={post.id}
+              post={post}
+              username={post.username}
+              title={post.title}
+              text={post.text}
+              onClickCard={() => onClickCard(post.id)}
+              commentsCount={post.commentsCount}
+              votesCount={post.votesCount}
+              handleVotePost={handleVotePost}
+            ></SimpleCard>
           );
         })}
       </StyleSimpleCard>

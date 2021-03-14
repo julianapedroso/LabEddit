@@ -34,6 +34,7 @@ const AsideResponsive = styled.div`
 
 const InputResponsive = styled.div`
   margin-right: 6rem;
+  width: 35vw;
 
   @media (min-width: 500px) and (max-width: 800px) {
     width: 100%;
@@ -147,7 +148,7 @@ export default function LoginPage({ setHandleButton }) {
         <img
           src="https://www.redditstatic.com/accountmanager/bbb584033aa89e39bad69436c504c9bd.png"
           style={{
-            height: "88.5vh",
+            height: "90vh",
             objectFit: "cover",
           }}
           alt="Capa"
