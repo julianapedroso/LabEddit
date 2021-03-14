@@ -30,7 +30,7 @@ const AsideResponsive = styled.div`
 
 const InputResponsive = styled.div`
   margin-top: 2rem;
-  width: 32vw;
+  width: 35vw;
   margin-right: 6rem;
 
   @media (min-width: 500px) and (max-width: 800px) {
@@ -149,95 +149,95 @@ export default function RegisterPage({ setHandleButton }) {
   return (
     <GridResponsive>
       <AsideResponsive>
-          <img
-            src="https://www.redditstatic.com/accountmanager/bbb584033aa89e39bad69436c504c9bd.png"
-            style={{
-              height: "88.5vh",
-              objectFit: "cover",
-            }}
-            alt="Capa"
-          />
-        </AsideResponsive>
-
-        <Grid
-          container
-          item
-          xs={12}
-          md={10}
-          sm={6}
+        <img
+          src="https://www.redditstatic.com/accountmanager/bbb584033aa89e39bad69436c504c9bd.png"
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            height: "90vh",
+            objectFit: "cover",
           }}
-        >
-          <InputResponsive>
-            <div align="center">
-              <Avatar className={classes.avatar}>
-                <LockOutlinedIcon />
-              </Avatar>
-            </div>
-            <form onSubmit={onSubmitForm}>
-              <TextField
-                onChange={onChangeUserName}
-                value={username}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="name"
-                type="text"
-                label="Nome"
-                name="name"
-                autoFocus
-              />
+          alt="Capa"
+        />
+      </AsideResponsive>
 
-              <TextField
-                onChange={onChangeEmail}
-                value={email}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                type="email"
-                label="Endereço de E-mail"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-
-              <TextField
-                onChange={onChangePassword}
-                value={password}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Senha"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </form>
-
-            <Button
-              onClick={handleRegister}
-              type="submit"
+      <Grid
+        container
+        item
+        xs={12}
+        md={10}
+        sm={6}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <InputResponsive>
+          <div align="center">
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+          </div>
+          <form onSubmit={onSubmitForm}>
+            <TextField
+              onChange={onChangeUserName}
+              value={username}
+              variant="outlined"
+              margin="normal"
+              required
               fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Cadastrar
-            </Button>
+              id="name"
+              type="text"
+              label="Nome"
+              name="name"
+              autoFocus
+            />
 
-            <Box mt={8}>
-              <Copyright />
-            </Box>
-          </InputResponsive>
-        </Grid>
+            <TextField
+              onChange={onChangeEmail}
+              value={email}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              type="email"
+              label="Endereço de E-mail"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+
+            <TextField
+              onChange={onChangePassword}
+              value={password}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Senha"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+          </form>
+
+          <Button
+            onClick={handleRegister}
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Cadastrar
+          </Button>
+
+          <Box mt={8}>
+            <Copyright />
+          </Box>
+        </InputResponsive>
+      </Grid>
     </GridResponsive>
   );
 }

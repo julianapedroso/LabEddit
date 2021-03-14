@@ -11,6 +11,35 @@ import Button from "@material-ui/core/Button";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import { TextField } from "@material-ui/core";
 import CommentListCard from "../components/CommentLisItem";
+import styled from "styled-components";
+
+export const InputResponsive = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  gap: 2rem;
+  margin: 1rem;
+
+  @media (min-width: 500px) and (max-width: 800px) {
+    button {
+      margin-top: 0.6rem;
+    }
+  }
+
+  @media (max-width: 499px) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 91vw;
+
+    input {
+      width: 80vw;
+    }
+
+    button {
+      margin-top: 0.6rem;
+    }
+  }
+`;
 
 const PostsDetailPage = (props) => {
   const params = useParams();
@@ -62,7 +91,7 @@ const PostsDetailPage = (props) => {
       .post(`${BASE_URL}/posts/${params.id}/comment`, body, authorization)
       .then((res) => {
         alert("Comentário criado com sucesso!");
-        showPostDetail();        
+        showPostDetail();
         setInputComment("");
       })
       .catch((err) => {
@@ -90,7 +119,7 @@ const PostsDetailPage = (props) => {
       )
       .then((res) => {
         alert("Você votou!");
-        showPostDetail();      
+        showPostDetail();
       })
       .catch((err) => {
         alert("Poxa, não foi possível votar no comentário :(");
@@ -108,10 +137,8 @@ const PostsDetailPage = (props) => {
                 <Typography component="h1" color="textSecondary">
                   <strong>{post.title.toUpperCase()}</strong>
                 </Typography>
-              
-                <Typography color="textSecondary">
-                  [{post.username}]
-                </Typography>
+
+                <Typography color="textSecondary">[{post.username}]</Typography>
                 <br />
 
                 <Typography variant="body2" component="p">
@@ -123,14 +150,7 @@ const PostsDetailPage = (props) => {
         );
       })}
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "3fr 1fr 3fr",
-          gap: "2rem",
-          margin: "1rem",
-        }}
-      >
+      <InputResponsive>
         <TextField
           onChange={onChangeInputComment}
           value={inputComment}
@@ -146,7 +166,7 @@ const PostsDetailPage = (props) => {
         <Button onClick={createComment}>
           <AddCircleIcon style={{ fontSize: 50, color: "#0079d3" }} />
         </Button>
-      </div>
+      </InputResponsive>
 
       {comments.map((comment) => {
         return (
