@@ -55,6 +55,7 @@ $ npm install
 ```
 $ npm run start
 ```
+##### Passo 5. Abra em seu navegador o seguinte endereço: [http://localhost:3000](http://localhost:3000)
 
 ### 📷 Prints:
 <img src="https://user-images.githubusercontent.com/68782453/111084516-864b5200-84f1-11eb-9b56-1108c321aa36.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/111084526-94996e00-84f1-11eb-90a4-9d1a69f89f3b.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/111084548-b72b8700-84f1-11eb-9aad-05dfa409d7c7.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/111084571-ce6a7480-84f1-11eb-84c1-1b8bcbb1d76c.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/111084611-fa85f580-84f1-11eb-90ad-d1cbb80382ec.png" width="50%"></img> <img src="https://user-images.githubusercontent.com/68782453/111084619-02de3080-84f2-11eb-88a5-1a600d997b5c.png" width="50%"></img> <img src="https://user-images.githubusercontent.com/68782453/111084584-de825400-84f1-11eb-8452-e641b5a6433f.png" width="50%"></img> <img src="https://user-images.githubusercontent.com/68782453/111084601-ecd07000-84f1-11eb-98e5-d70c20d7921a.png" width="50%"></img>  
