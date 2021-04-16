@@ -10,7 +10,7 @@
 <hr />
 
 ### 🔗 Link do Surge:
-http://nonchalant-rub.surge.sh/login
+http://nonchalant-rub.surge.sh/
 
 ### ✨ Funcionamento:
 - [x] Rotas
