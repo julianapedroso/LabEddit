@@ -9,6 +9,9 @@
 </h4>
 <hr />
 
+### 🔗 Link do Surge:
+http://nonchalant-rub.surge.sh/login
+
 ### ✨ Funcionamento:
 - [x] Rotas
 - [x] Página Home 
@@ -31,9 +34,6 @@ As seguintes tecnologias foram usadas na construção do projeto:
 ### 🎨 Layout:
 - Material-UI
 - Styled-componentes
-
-### 🔗 Link do Surge:
-http://nonchalant-rub.surge.sh/login
 
 ### 📂 Como instalar o projeto:
 
