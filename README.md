@@ -35,7 +35,7 @@ As seguintes tecnologias foram usadas na construção do projeto:
 ### 🔗 Link do Surge:
 http://nonchalant-rub.surge.sh/login
 
-# 📂 Como instalar o projeto:
+### 📂 Como instalar o projeto:
 
 ##### Passo 1. Clone este repositório:
 ```
